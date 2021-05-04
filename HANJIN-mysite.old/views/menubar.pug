@@ -1,0 +1,32 @@
+.main-menu-bar.fadeIn
+    -
+        var navigation = [
+            {
+                id: 'menu',
+                link: '#menu',
+                title: 'Menu',
+                type: [
+                    {
+                        id: 'profile',
+                        title: 'PROFILE',
+                    },
+                    {
+                        id: 'projects',
+                        title: 'PROJECTS',
+                    },
+                    {
+                        id: 'aboutthispage',
+                        title: 'ABOUT THIS PAGE',
+                    }
+                ]
+            }
+        ]
+    nav.navigation
+        ul.navigation__list
+            each item in navigation
+                li.navigation__element
+                    a(href=item.link, class='navigation__link--' + item.id).navigation__link=item.title
+                    ul.navigation__submenu
+                        each item_sub in item.type
+                            li.navigation__submenu-element
+                                a(href='#'+item_sub.id).navigation__submenu-link=item_sub.title

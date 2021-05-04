@@ -1,0 +1,48 @@
+html,body {
+    font-family: "Sunflower", sans-serif;
+    /* background-color: #36393f; */
+    background-color: #F6F6F8;
+    /* height: 100%; */
+    overflow-x:hidden;
+    overflow-y:hidden;
+    margin: 0px;
+}
+.email-container {
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    padding: 0 5px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background: white;
+    border: 1px solid silver;
+    color: black;
+    height: 37px;
+    line-height: 37px;
+    vertical-align: middle;
+    font-size: 12px;
+}
+input {
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid silver;
+}
+textarea {
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid silver;
+}
+.input-group { margin: 15px; }
+.input-group label { width: 20%; display: inline-block; text-align: center;}
+.input-group input { width: 60%; }
+.input-group textarea {width: 60%; }
+.input-group #email-quest {
+    height: 100px;
+}
+
+.mailMessage {
+    color: red; 
+    font-weight: bold;
+}

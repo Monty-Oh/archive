@@ -1,0 +1,117 @@
+.mainPage {
+  display: none;
+}
+
+.mainPage .category {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -280px;
+  width: 560px;
+  height: 200px;
+}
+
+.mainPage .category img {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin: 40px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.mainPage .backButton {
+  width: 100px;
+  height: 100px;
+  animation-duration: 2.5s;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  -webkit-transform: translate3d(5px, 0, 0);
+  transform: translate3d(5px, 0, 0);
+  cursor: pointer;
+}
+
+.mainPage .backButton:hover {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translate3d(-5px, 0, 0);
+  transform: translate3d(-5px, 0, 0);
+}
+
+.mainPage .backButton img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.mainPage .folder {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translate3d(0, 5px, 0);
+  transform: translate3d(0, 5px, 0);
+}
+
+.mainPage .folder:hover {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translate3d(0, -5px, 0);
+  transform: translate3d(0, -5px, 0);
+}
+
+.mainPage .folder1 {
+  animation-duration: 1.5s;
+}
+
+.mainPage .folder2 {
+  animation-duration: 1.5s;
+  animation-delay: 0.15s;
+}
+
+.mainPage .folder3 {
+  animation-duration: 1.5s;
+  animation-delay: 0.3s;
+}
+
+.mainPage .folder4 {
+  animation-duration: 1.5s;
+  animation-delay: 0.45s;
+}
+
+.mainPage .texts {
+  height: 60px;
+  width: 560px;
+}
+
+.mainPage .text {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.mainPage .text1 {
+  animation-duration: 1.5s;
+  animation-delay: 0.6s;
+}
+
+.mainPage .text2 {
+  animation-duration: 1.5s;
+  animation-delay: 0.75s;
+}
+
+.mainPage .text3 {
+  animation-duration: 1.5s;
+  animation-delay: 0.9s;
+}
+
+.mainPage .text4 {
+  animation-duration: 1.5s;
+  animation-delay: 1.05s;
+}

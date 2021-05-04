@@ -1,0 +1,66 @@
+.SearchFilter {
+  padding-left: 3rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  .RenewButton {
+    margin-right: 2rem;
+    height: 2rem;
+    background: none;
+    outline: none;
+    border: none;
+    display: flex;
+    font-size: 1.3rem;
+
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s background ease-in;
+    &:hover {
+      animation: rotate_image 2s linear infinite;
+      transform-origin: 50% 50%;
+      @keyframes rotate_image{
+        100% {
+            transform: rotate(360deg);
+          }
+        }
+    }
+  }
+  button {
+    height: 2rem;
+    background: none;
+    outline: none;
+    border: none;
+    display: flex;
+    font-size: 1.3rem;
+    padding: 0;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s background ease-in;
+    &:hover {
+      color: #adb5bd;
+    }
+  }
+  .Radios {
+    padding-left: 1rem;
+    .CheckBoxs {
+      .Radio {
+        display: flex;
+        align-items: center;
+      }
+      .text {
+        font-weight: bold;
+        font-size: 1rem;
+        padding: 0.5rem;
+      }
+      input {
+        width: 13rem;
+      }
+      .caseIdCheckInput {
+        width: 4rem;
+      }
+      .prefixCheckInput {
+        width: 4rem;
+      }
+    }
+  }
+}

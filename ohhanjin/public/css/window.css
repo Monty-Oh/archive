@@ -1,0 +1,139 @@
+.window {
+  animation-duration: 0.5s;
+  display: none;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -350px;
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  width: 700px;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  background-color: #d3d3d3;
+}
+
+.window .window_bar_area {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  padding-left: 4px;
+  width: 700px%;
+  height: 25px;
+  border-radius: 5px;
+  background-color: #71a0c8;
+}
+
+.window .window_bar_area img {
+  height: 25px;
+  width: 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  float: left;
+}
+
+.window .window_bar_area img:hover {
+  box-shadow: 0px 0px 2px #333333;
+}
+
+.window .window_bar_area .window_bar_title {
+  font-size: 20px;
+  padding-left: 40px;
+  text-align: left;
+  padding-right: 50px;
+}
+
+.window .window_content_area {
+  padding-top: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+  overflow-y: scroll;
+  height: 455px;
+}
+
+.window .window_content_area .content_area {
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.window_content_area .content_area #fiximg {
+  width: 300px;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+#mypicture {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+#nodejs {
+  width: 200px;
+  height: auto;
+}
+
+.window_content_area .content_area .title {
+  color: #2784d3;
+  font-size: 30px;
+}
+
+.window_content_area .content_area .used {
+  font-size: 25px;
+}
+
+.window_content_area .content_area a {
+  text-decoration: none;
+  color: #2784d3;
+  cursor: pointer;
+}
+
+.window_content_area .content_area .information {
+  color: #808080;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  /* 세로축 스크롤바 길이 */
+  height: 20px;
+  /* 가로축 스크롤바 길이 */
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #d3d3d3;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: gray;
+}
+
+::-webkit-scrollbar-button {
+  background-color: darkblue;
+  width: 20px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-button:start {
+  background-color: #d3d3d3;
+  /* Top, Left 방향의 이동버튼 */
+}
+
+::-webkit-scrollbar-button:end {
+  background-color: #d3d3d3;
+  /* Bottom, Right 방향의 이동버튼 */
+}

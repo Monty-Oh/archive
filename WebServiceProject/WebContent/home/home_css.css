@@ -1,0 +1,34 @@
+@CHARSET "EUC-KR";
+<style>
+
+
+	.main_container{
+	width:100%;
+	height:100%;
+	border: 1px solid black;
+	margin:0px auto;
+	}
+	
+	.main_title{
+	width:100%;
+	height:60px;
+	margin:0px auto;
+	text-align:center;
+	border: 1px solid black;
+	}
+	
+	.main_category{
+	width:100%;
+	height:40px;
+	margin:0px auto;
+	text-align:right;
+	border: 1px solid black;
+	}
+	
+	.main_post{
+	width:100%;
+	height:600px;
+	margin:0px auto;
+	text-align:left;
+	border: 1px solid black;
+	}

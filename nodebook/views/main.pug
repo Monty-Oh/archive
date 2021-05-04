@@ -1,0 +1,143 @@
+extends layout
+
+block content
+  .timeline
+    input#urls(type='hidden' value=urls)
+    if user
+      div
+        form#twit-form(action=urls.post method='post' enctype='multipart/form-data')
+          .input-group
+            textarea#twit(name='content' maxlength=140)
+          .img-preview
+            img#img-preview(src='' style='display: none;' width='250' alt='미리보기')
+            input#img-url(type='hidden' name='url')
+          div
+            label#img-label(for='img') 사진 업로드
+            input#img(type='file' accept='image/*')
+            button#twit-btn.btn(type='submit') 업로드
+    .twits
+      form#hashtag-form(action=urls.post+urls.hashtag)
+        input(type='text' name='hashtag' placeholder='태그 검색')
+        button.btn 검색
+      for twit in twits
+        .twit
+          input.twit-user-id(type='hidden' value=twit.user.id)
+          input.twit-id(type='hidden' value=twit.id)
+          //- url 생성
+          input.twit-delete-url(type='hidden' value=urls.deletepost(twit.id))
+          input.twit-follow-url(type='hidden' value=urls.postfollow(twit.user.id))
+          .twit-author= twit.user.nick
+          //- 사용자가 현재 게시글 작성자를 팔로잉 중인지?
+          -const follow = user && user.Followings.map(f => f.id).includes(twit.user.id);
+          if user && user.id !== twit.user.id && !follow
+            button.twit-follow 팔로우
+          br
+          hr
+          br
+          if twit.img
+            .twit-img
+              img(src=twit.img alt='섬네일')
+          .twit-content= twit.content
+          br
+          //- 사용자가 현재 게시글을 좋아하는지?
+          -const like = user && user.PostLike.map(f => f.id).includes(twit.id);
+          if user && user.id !== twit.user.id && !like
+            input.twit-like(type='hidden' value=urls.postlike(twit.id, 'like'))
+            button.twit-like-btn &#x2661
+          else if user && user.id !== twit.user.id && like
+            input.twit-like(type='hidden' value=urls.postlike(twit.id, 'cancel'))
+            button.twit-like-btn &#x2665
+          else if user && user.id === twit.user.id
+            button.twit-delete-btn 삭제
+  script.
+    const urls = !{JSON.stringify(urls)};
+
+    // 포스트 삭제 이벤트
+    document.querySelectorAll('.twit-delete-btn').forEach(function (tag) {
+      tag.addEventListener('click', function () {
+        const deletepost_url = tag.parentNode.querySelector('.twit-delete-url').value;
+        const isLoggedIn = document.querySelector('#my-id');
+        if (isLoggedIn) {
+            if (confirm('정말로 삭제하시겠습니까?')) {
+            const postId = tag.parentNode.querySelector('.twit-id').value;
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+              if (xhr.status === 200) {
+                location.reload();
+              } else {
+                console.error(xhr.responseText);
+              }
+            }
+            xhr.open('DELETE', urls.post + deletepost_url);
+            xhr.send();
+          }
+        }
+      });
+    });
+
+    // 게시글 좋아요 버튼 이벤트
+    document.querySelectorAll('.twit-like-btn').forEach(function (tag) {
+      tag.addEventListener('click', function () {
+        const isLoggedIn = document.querySelector('#my-id');
+        if (isLoggedIn) {
+          const like_url = tag.parentNode.querySelector('.twit-like').value;
+          const xhr = new XMLHttpRequest();
+          xhr.onload = function () {
+            if (xhr.status === 200) {
+              location.reload();
+            } else {
+              console.error(xhr.responseText);
+            }
+          }
+          xhr.open('POST', urls.post + like_url);
+          xhr.send();
+        }
+      });
+    });
+
+    // 유저 팔로우
+    document.querySelectorAll('.twit-follow').forEach(function (tag) {
+      tag.addEventListener('click', function () {
+        const follow_url = tag.parentNode.querySelector('.twit-follow-url').value;
+        var isLoggedIn = document.querySelector('#my-id');
+        if (isLoggedIn) {
+          var userId = tag.parentNode.querySelector('.twit-user-id').value;
+          var myId = isLoggedIn.value;
+          if (userId !== myId) {
+            if (confirm('팔로잉하시겠습니까?')) {
+              var xhr = new XMLHttpRequest();
+              xhr.onload = function () {
+                if (xhr.status === 200) {
+                  location.reload();
+                } else {
+                  console.error(xhr.responseText);
+                }
+              };
+              xhr.open('POST', urls.user + follow_url);
+              xhr.send();
+            }
+          }
+        }
+      });
+    });
+
+    if (document.getElementById('img')) {
+      document.getElementById('img').addEventListener('change', function (e) {
+        var formData = new FormData();
+        console.log(this, this.files);
+        formData.append('img', this.files[0]);
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            var url = JSON.parse(xhr.responseText).url;
+            document.getElementById('img-url').value = url;
+            document.getElementById('img-preview').src = url;
+            document.getElementById('img-preview').style.display = 'inline';
+          } else {
+            console.error(xhr.responseText);
+          }
+        };
+        xhr.open('POST', '/post/img');
+        xhr.send(formData);
+      });
+    }

@@ -1,0 +1,13 @@
+.SelectHowMany {
+  font-weight: bold;
+  padding-left: 3rem;
+  label {
+    display: flex;
+  }
+  .select {
+    padding-left: 0.5rem;
+    select {
+      font-size: 1rem;
+    }
+  }
+}

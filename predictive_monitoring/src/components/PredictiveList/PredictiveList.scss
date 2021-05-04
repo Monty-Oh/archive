@@ -1,0 +1,19 @@
+.PredictiveList {
+  width: 100%;
+  min-height: 8rem;
+
+  display: flex;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    background: white;
+  }
+
+  th {
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    height: 3rem;
+  }
+}

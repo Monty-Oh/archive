@@ -1,0 +1,76 @@
+@font-face { font-family: "HelveticaNeue-Light"; src: url('../font/HelveticaNeue-Light.ttf'); }
+@font-face { font-family: "HelveticaNeue-Thin"; src: url('../font/HelveticaNeue-Thin.ttf'); }
+@font-face { font-family: "Montserrat-Light"; src: url('../font/Montserrat-Light.otf'); }
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+body {
+
+}
+
+#weather {
+	text-align: right;
+}
+
+#weather-icon-wrapper {
+	position: relative;
+	height: 105px;
+}
+
+#weather-icon {
+	position: absolute;
+	height: 100px;
+	bottom: 0;
+	right: 0;
+	font-size: 80px;
+}
+
+#time, #weather {
+	font-family: "Montserrat-Light" !important;
+	font-size: 80px;
+	font-weight: 0 !important;
+	z-index: 1000;
+}
+
+#time small, #weather small {
+	color:black;
+	font-size: 20px;
+}
+
+.timeblock {
+	padding:0;
+	position: absolute;
+	top: 0px;
+	left: 100px;
+	z-index: 0;
+	width: 500px;
+	height:200px;
+}
+
+.timeinner {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+	width: 100%;
+}
+
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+}
+
+.wi {
+	display: block !important;
+}

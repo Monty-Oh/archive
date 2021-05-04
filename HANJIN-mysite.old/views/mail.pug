@@ -1,0 +1,26 @@
+doctype
+html
+    head
+        meta(charset='URF-8')
+        title 이메일 문의
+        link(rel="stylesheet" href="/css/email.css")
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        script(src="http://code.jquery.com/jquery-1.11.0.min.js")
+        link(href="https://fonts.googleapis.com/css?family=Cute+Font|Do+Hyeon|Poor+Story|Sunflower:300,500,700&display=swap&subset=korean" rel="stylesheet")
+
+    body
+        .email-container
+            //- .input-group
+            //-     label(for='email-name') 이름
+            //-     input#email-name(type='text', name='email-name')
+            form(action=urls.postmail method='post')
+                .input-group
+                    label(for='email-email') 이메일
+                    input#email-email(type='email' name='email' required autofocus)
+                .input-group
+                    label#quest(for='email-quest') 내용
+                    textarea#email-quest(name='quest' cols="50" rows="8")
+                button.btn#send(type='submit') 보내기
+            if mailMessage
+                p.mailMessage= mailMessage
+            p= text

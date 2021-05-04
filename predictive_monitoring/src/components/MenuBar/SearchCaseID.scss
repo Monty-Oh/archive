@@ -1,0 +1,39 @@
+.SearchCaseID {
+  display: flex;
+  align-items: center;
+  width: 14rem;
+  form {
+    width: 12rem;
+    display: flex;
+    margin: 0;
+    padding-left: 3rem;
+    align-items: center;
+  }
+  align-items: center;
+  .SearchBox {
+    background: none;
+    outline: none;
+    font-size: 1.125rem;
+    height: 2rem;
+    width: 8rem;
+    color: black;
+    &::placeholder {
+      color: #adb5bd;
+    }
+  }
+  button {
+    height: 2rem;
+    background: none;
+    outline: none;
+    border: none;
+    display: flex;
+    font-size: 1.3rem;
+
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s background ease-in;
+    &:hover {
+      color: #adb5bd;
+    }
+  }
+}

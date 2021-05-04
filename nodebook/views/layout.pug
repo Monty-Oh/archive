@@ -1,0 +1,42 @@
+doctype
+html
+    head
+        meta(charset='URF-8')
+        title= title
+        meta(name='viewport' content='width=device-width, user-scalable=no')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        link(rel='stylesheet' href='/css/main.css')
+    body
+        .container
+            .profile-wrap
+                .profile
+                    if user && user.id
+                        .user-id= '안녕하세요! ' + user.nick + '님'
+                        .half
+                            .following-text 팔로잉
+                            .count.following-count= user.Followings && user.Followings.length || 0
+                        .half
+                            .following-text 팔로워
+                            .count.follower-count= user.Followers && user.Followers.length || 0
+                        input#my-id(type='hidden' value=user.id)
+                        .button-group
+                            a#my-profile.btn(href=urls.getprofile) 내 프로필
+                            a#logout.btn(href=urls.auth+urls.logout) 로그아웃
+                    else
+                        form#login-form(action=urls.auth+urls.postlogin method='post')
+                            .input-group
+                                label(for='email') 이메일
+                                input#email(type='email' name='email' required autofocus)
+                            .input-group
+                                label(for='password') 비밀번호
+                                input#password(type='password' name='password' required)
+                            if loginError
+                                .error-message= loginError
+                            a#join.btn(href=urls.getjoin) 회원가입
+                            button#login.btn(type='submit') 로그인
+                            a#kakao.btn(href=urls.auth+urls.kakao) 카카오톡
+                footer
+                    .portfolio-url
+                        | Made by&nbsp;
+                        a#portfolio-url(href=URL target='_blank') ASSN2
+            block content

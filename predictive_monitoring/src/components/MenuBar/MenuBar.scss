@@ -1,0 +1,17 @@
+.MenuBar {
+  // border-bottom: 2px solid #dee2e6;
+  background: #f8f9fa;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  .github {
+    width: 100%;
+    a {
+        img {
+        margin: 0 auto;
+        padding-right: 20px;
+        width: 25px;
+      }
+    }
+  }
+}

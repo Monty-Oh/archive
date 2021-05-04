@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    .timeline
+        a#my-profile.btn(href='/update') 프로필 수정
+        div
+            .followings.half
+                h2 팔로잉 목록
+                if user.Followings
+                    .following
+                        for following in user.Followings
+                            div.following-block= following.nick
+                                input#following-id(type='hidden', value=urls.deletefollow(following.id))
+                                button.delete-follow(type='submit') 팔로우끊기
+            .followers.half
+                h2 팔로워 목록
+                if user.Followers
+                    for follower in user.Followers
+                        div= follower.nick
+        
+    script.
+        const urls = !{JSON.stringify(urls)};
+        document.querySelectorAll('.delete-follow').forEach(function (tag) {
+            tag.addEventListener('click', function () {
+                var delete_follow_url = tag.parentNode.querySelector('#following-id').value;
+                if (confirm('팔로잉 끊기를 하시겠습니까?')) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.onload = function () {
+                        if (xhr.status === 200) {
+                            location.reload();
+                        } else {
+                            console.error(xhr.responseText);
+                        }
+                    };
+                    xhr.open('DELETE', urls.user + delete_follow_url);
+                    xhr.send();
+                }
+            })
+        })

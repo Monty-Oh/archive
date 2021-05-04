@@ -1,0 +1,248 @@
+#info{
+  color:white;
+}
+
+a.jcm-top { position: fixed; right: 15px; bottom: 15px; border-radius: 5px;
+  color: #ffffff; text-align: center; width: 45px; height: 45px; font-size: 40px;
+  /*background-color: rgba(50,50,50,0.5);*/
+  background-color:#323232; opacity:0.5;
+  filter:alpha(opacity=50);
+  /*ie8 호환을 위한코드 위와 동일한 것임 호환필요없으면 한줄로 rgba적으면됨*/
+  z-index: 999; display: none; }
+
+
+
+body, ul{
+  margin:  0;
+  padding: 0;
+}
+
+body{
+  background: url(../picture/bg_new_1.png) no-repeat 50% 50% fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.menu{
+  text-align:center;
+  position: relative;
+  top:300px;
+  height: 200px;
+  margin: 0px;
+  padding: 50px;
+  font-size: 45px;
+  font-family :'나눔고딕', 'Malgun Gothic', sans-serif;
+  height:auto;
+
+}
+
+.menu li{
+  list-style-type: none;
+}
+
+.menu a{
+  text-decoration: none;
+  color: black;
+}
+
+#portfoliogrid{
+  opacity:0;
+  text-align: center;
+  color:white;
+  background-color: black;
+  position: relative;
+  top:600px;
+  height: 900px;
+  margin: 0px;
+  padding: 50px;
+  font-size: 20px;
+
+}
+
+#portfoliogrid .port1{
+  width: 900px;
+  margin: 0 auto;
+}
+
+#portfoliogrid .img1{
+  float:left;
+  margin:0 50px;
+  width:200px;
+  height:200px;
+  background: url(../picture/bus_button.jpg) no-repeat;
+  border-radius: 7px;
+  padding-bottom:100px;
+}
+
+#portfoliogrid .img2{
+  float:left;
+  margin:0 50px;
+  width:200px;
+  height:200px;
+  background: url(../picture/sns.jpg) no-repeat;
+  border-radius: 7px;
+  padding-bottom:100px;
+}
+
+#portfoliogrid .img3{
+  float:left;
+  margin:0 50px;
+  width:200px;
+  height:200px;
+  background: url(../picture/embedded.jpg) no-repeat;
+  border-radius: 7px;
+  padding-bottom:100px;
+}
+
+#portfoliogrid .img4{
+  float:left;
+  margin:0 50px;
+  width:200px;
+  height:200px;
+  background: url(../picture/31game.jpg) no-repeat;
+  border-radius: 7px;
+  padding-bottom:100px;
+}
+
+#portfoliogrid .img5{
+  float:left;
+  margin:0 50px;
+  width:200px;
+  height:200px;
+  background: url(../picture/embedded.jpg) no-repeat;
+  border-radius: 7px;
+  padding-bottom:100px;
+}
+
+#portfoliogrid .img6{
+  float:left;
+  margin:0 50px;
+  width:200px;
+  height:200px;
+  background: url(../picture/embedded.jpg) no-repeat;
+  border-radius: 7px;
+  padding-bottom:100px;
+}
+
+#portfoliogrid .text{
+  width:200px;
+  height:200px;
+  background: #000000;
+  opacity: 0;
+  line-height: 200px;
+}
+
+#portfoliogrid .img1:hover .text{
+  opacity:0.6;text-align:justify;color:#ffffff;font-size:20px;font-weight:700;font-family:"맑은 고딕";padding:auto;text-align: center;
+}
+
+#portfoliogrid .img2:hover .text{
+  opacity:0.6;text-align:justify;color:#ffffff;font-size:20px;font-weight:700;font-family:"맑은 고딕";padding:auto;text-align: center;
+}
+
+#portfoliogrid .img3:hover .text{
+  opacity:0.6;text-align:justify;color:#ffffff;font-size:20px;font-weight:700;font-family:"맑은 고딕";padding:auto;text-align: center;
+}
+
+#portfoliogrid .img4:hover .text{
+  opacity:0.6;text-align:justify;color:#ffffff;font-size:20px;font-weight:700;font-family:"맑은 고딕";padding:auto;text-align: center;
+}
+
+#portfoliogrid .img5:hover .text{
+  opacity:0.6;text-align:justify;color:#ffffff;font-size:20px;font-weight:700;font-family:"맑은 고딕";padding:auto;text-align: center;
+}
+
+#portfoliogrid .img6:hover .text{
+  opacity:0.6;text-align:justify;color:#ffffff;font-size:20px;font-weight:700;font-family:"맑은 고딕";padding:auto;text-align: center;
+}
+
+.your-class img{
+  width:100%;
+  height:100%;
+  border-radius: 7px;
+}
+.your-class div{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.secondpic{
+  background: url(../picture/bg_1.gif) no-repeat 50% 0% fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  top:500px;
+  height: 400px;
+  margin: 0px;
+  padding: 50px;
+}
+
+#intro {
+  opacity: 0;
+  text-align: center;
+  color:white;
+  background-color: black;
+  position: relative;
+  top:500px;
+  height: 1000px;
+  margin: 0px;
+  padding: 50px;
+  font-size: 20px;
+}
+
+#intro p {
+  padding-left: 100px;
+  padding-right:100px;
+  text-align: justify;
+}
+
+
+.thirdpic{
+  background: url(../picture/bg_2.gif) no-repeat 50% 0% fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  top:500px;
+  height: 400px;
+  margin: 0px;
+  padding: 50px;
+}
+
+#page{
+  text-align: center;
+  color:white;
+  background-color: black;
+  position: relative;
+  top:500px;
+  height: 750px;
+  margin: 0px;
+  padding: 50px;
+}
+
+#page a{
+  text-decoration: none;
+  color: white;
+}
+
+#page p{
+  padding-left: 100px;
+  padding-right:100px;
+  text-align: justify;
+}
+
+#page #myDIV{
+  font-size:15px;
+
+  text-align:left;
+  padding-left: 100px;
+  padding-right:100px;
+}

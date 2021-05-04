@@ -1,0 +1,21 @@
+.InsertFile {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+
+  padding-left: 1rem;
+  font-size: 1.8rem;
+
+  input {
+    display: none;
+  }
+
+  label {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.1s background ease-in;
+    &:hover {
+      background: #adb5bd;
+    }
+  }
+}

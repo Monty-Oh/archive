@@ -1,0 +1,48 @@
+/*
+font-family: 'Cute Font', cursive;
+font-family: 'Poor Story', cursive;
+font-family: 'Do Hyeon', sans-serif;
+font-family: 'Sunflower', sans-serif;
+*/
+body {
+  font-family: "Sunflower", sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.intro {
+  display: none;
+}
+
+.introtexts {
+  opacity: 1;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  width: 200px;
+  height: 200px;
+}
+
+.button1 {
+  animation-duration: 2.6s;
+  color: white;
+  text-align: left;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  cursor: pointer;
+}
+
+.button2 {
+  animation-delay: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+.button2 img {
+  width: 100px;
+  height: 100px;
+}

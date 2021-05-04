@@ -1,0 +1,88 @@
+.projects.fadeIn#projects
+    h1 PROJECTS
+    <br><br><br><br><br><br><br>
+    .flex-parent
+        .input-flex-container
+            .input.active
+                span(data-year='JSP', data-info='music SNS')
+            .input
+                span(data-year='Android', data-info='BABABA')
+            .input
+                span(data-year='C,JAVA', data-info='Embedded System')
+            .input
+                span(data-year='nodejs', data-info='NodeBook')
+            .input
+                span(data-year='React', data-info='Predictive Monitoring')
+        .description-flex-container
+            p.active
+                img(src=urls.assets + '/musicSNS.png')
+                <br>
+                | JSP와 서블릿, Apache를 이용해 처음으로 만들어 본 웹 음악 SNS 서비스입니다.
+                <br>
+                | 서버와 웹에 다소 부족한 실력이었지만, 처음으로 만들어본 웹서버였습니다. MVC패턴에 대해 알게되고,
+                | 서버와 클라이언트에 대해 이해하고 관심을 갖게 되는 프로젝트였습니다.
+                <br><br>
+                a(href='https://github.com/ASSSSN/WebServiceProject' target='_blank') 자세히
+
+            p
+                img(src=urls.assets + '/BABABA.png')
+                <br>
+                | 졸업 과제로 버스 자동 승하차 시스템을 구현함으로써, 승하차 시간을 줄이고, 하차 미태그 문제를 해결하려 
+                | 했던 프로젝트입니다.
+                <br>
+                | 초 전력 블루투스인 비콘과 핸드폰을 연결해 현재 위치를 파악하는 기술을 구현하려 했습니다.
+                <br><br>
+                a(href='https://github.com/ASSSSN/BABABA' target='_blank') 자세히
+
+            p
+                img(src=urls.assets + '/embedded.png')
+                <br>
+                | 임베디드 프로그래밍 목적으로 만들어진 기기 'hbe sm3 sv210'를 사용하여 드라이버 프로그래밍을 경험해보는
+                | 프로젝트였습니다.
+                <br><br>
+                a(href='https://github.com/ASSSSN/embedded' target='_blank') 자세히
+
+            p
+                img(src=urls.assets + '/nodebook.png')
+                <br>
+                | 익스프레스 기반의 SNS 웹 앱 입니다.
+                <br>
+                | 요청 흐름을 공부하기 위해 시작한 프로젝트 입니다.
+                <br>
+                | passport 로그인 모듈과 같은 다양한 모듈을 사용해 봤으며,
+                <br>
+                | 실제로 배포한다는 가정하에 쓰이는 모듈들도 사용해 봤습니다.
+                <br><br>
+                a(href='https://github.com/ASSSSN/nodebird' target='_blank') 자세히
+
+            p
+                img(src=urls.assets + '/PredictiveMonitoring.png')
+                <br>
+                | 논문 발표 준비중인 친구의 부탁과 요구사항에 맞춰 
+                <br>
+                | 만든 처음으로 배포한 리액트 웹앱 입니다.
+                <br>
+                | CSV파일을 읽어와 분석하고, 필터와 검색에 맞춰 원하는 
+                <br>
+                | 데이터를 최대한 최적화에 신경쓰면서
+                <br>
+                | 화면상에 필요한 부분만 렌더링해 보여주는 
+                <br>
+                | 리액트 웹앱 입니다.
+                <br><br>
+                a(href='https://github.com/ASSSSN/predictive_monitoring' target='_blank') 자세히
+
+
+script.
+    $(function(){
+        var inputs = $('.input');
+        var paras = $('.description-flex-container').find('p');
+        $(inputs).click(function(){
+            var t = $(this),
+                    ind = t.index(),
+                    matchedPara = $(paras).eq(ind);
+            
+            $(t).add(matchedPara).addClass('active');
+            $(inputs).not(t).add($(paras).not(matchedPara)).removeClass('active');
+        });
+    });

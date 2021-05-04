@@ -1,0 +1,60 @@
+extends layout
+
+block content
+    .timeline
+        input#provider(type='hidden', value=provider)
+        if provider === 'kakao'
+            .input-group
+                label(for='update-nick') 닉네임
+                input#update-nick(type='text' name='nick')
+                .error-message
+            button#update-btn.btn(type='submit') 프로필 수정
+        
+        else
+            .input-group
+                label(for='update-email') 이메일
+                input#update-email(type='email' name='email')
+            .input-group
+                label(for='update-nick') 닉네임
+                input#update-nick(type='text' name='nick')
+            .input-group
+                label(for='update-password') 비밀번호
+                input#update-password(type='password' name='password')
+                .error-message
+            button#update-btn.btn(type='submit') 프로필 수정
+
+    script.
+        const urls = !{JSON.stringify(urls)};
+        document.getElementById('update-btn').addEventListener('click', function (e) {
+            if (confirm('프로필을 수정하시겠습니까?')) {
+                var data = {};
+                var provider = document.getElementById('provider');
+                var email = document.getElementById('update-email');
+                var nick = document.getElementById('update-nick');
+                var password = document.getElementById('update-password');
+
+                // provider에 따라 다른 값을 보내준다.
+                if (provider.value === 'kakao') {
+                    data.nick = nick.value;
+                } else {
+                    data.email = email.value;
+                    data.nick = nick.value;
+                    data.password = password.value;
+                }
+                data.provider = provider.value;
+
+                var json = JSON.stringify(data);
+                var xhr = new XMLHttpRequest();
+                
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        location.reload();
+                    } else {
+                        alert(xhr.responseText);
+                    }
+                };
+                xhr.open('PUT', urls.auth + urls.putprofile);
+                xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+                xhr.send(json);
+            }
+        });

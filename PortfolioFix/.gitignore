@@ -1,0 +1,9 @@
+#private files
+public/pdf
+public/picture
+node_modules
+#package.json
+package-lock.json
+public/notused
+config.js
+SQLQUERY

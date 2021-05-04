@@ -1,0 +1,417 @@
+/* layout.pug */
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    scroll-behavior: smooth;
+    font-family: "Sunflower", sans-serif;
+    /* background-color: #36393f; */
+    background-color: #F6F6F8;
+    /* height: 100%; */
+    overflow-x:hidden;
+    margin: 0px;
+}
+
+/* intro.pug */
+.intro {
+    font-size: 30px;
+    display: table-cell;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #F6F6F8;
+    vertical-align: middle;
+    text-align: center;
+    animation-duration: 1s;
+    animation-name: fadeIn;
+}
+.intro #intro-text {
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+    color: black;
+}
+.intro #intro-img {
+    cursor: pointer;
+    max-width: 120px;
+    margin: 30px;
+}
+.intro #intro-img:hover {
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+}
+.intro #intro-img {
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+}
+
+/* main.pug */
+
+
+/* manubar.pug */
+.main-menu-bar {
+    background-color: #F6F6F8;
+    animation-duration: 1s;
+    position: fixed;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+}
+
+.navigation {
+    margin: 0;
+    padding: 0;
+    padding-left: 80px;
+    font-size: 17px;
+    background-color: #F6F6F8;
+    width: 100px;
+}
+.navigation__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+.navigation__element {
+list-style: none;
+position: relative;
+}
+.navigation__link {
+display: block;
+padding: 1em 2em;
+text-decoration: none;
+color: #f06543;
+box-shadow: inset 0 0 0 0 rgba(240, 101, 67, 0);
+transition: box-shadow 0.3s linear, color 0.3s linear;
+}
+.navigation__link:hover {
+box-shadow: inset 0 -50px 0 0 #f06543;
+color: #e8e9eb;
+}
+.navigation__submenu {
+position: absolute;
+left: 50%;
+transform: translateX(-50%) scaleY(0);
+transform-origin: top center;
+transition: transform 0.3s linear;
+z-index: 2;
+margin: 0;
+padding: 0;
+width: 200px;
+background-color: #f06543;
+font-size: 14px;
+display: flex;
+flex-direction: column;
+}
+.navigation__submenu-element {
+list-style: none;
+}
+.navigation__submenu-link {
+display: block;
+text-align: left;
+text-decoration: none;
+color: #e8e9eb;
+padding: 1em 2em;
+background-color: transparent;
+transition: background-color 0.1s linear;
+}
+.navigation__submenu-link:hover {
+background-color: rgba(49, 54, 56, 0.3);
+}
+.navigation__element {
+box-shadow: inset 0 0 0 0 rgba(240, 101, 67, 0);
+transition: box-shadow 0.3s linear, color 0.3s linear;
+}
+.navigation__element:hover {
+box-shadow: inset 0 -50px 0 0 #f06543;
+color: #e8e9eb;
+}
+.navigation__element:hover .navigation__link {
+color: #e8e9eb;
+}
+.navigation__element:hover .navigation__submenu {
+transform: translateX(-50%) scaleY(1);
+}
+
+/* content.pug */
+.content {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    animation-duration: 1s;
+}
+.content .introduce {
+width: 1200px;
+}
+.content .introduce #name {
+/* padding-top: 30px;
+margin-top: 0; */
+padding: 50px;
+float: left;
+text-align: left;
+font-size: 50px;
+/* height: 100vh; */
+}
+.content .introduce #first-name {
+margin: 0;
+color: #f06543;
+}
+.content .introduce #profile-skill {
+    display: flex;
+margin: 0;
+padding-left: 0px;
+/* float: left; */
+}
+.content h1 {
+/* margin: 0; */
+display: flex;
+flex-direction: row;
+font-size: 25px;
+}
+.content h1:after {
+content: "";
+flex: 1 1;
+border-bottom: 2px solid red;
+margin: auto;
+margin-left: 30px;
+margin-right: 50px;
+}
+
+#profile-firstText {
+    display: flex;
+    font-size: 23px;
+    color: #f06543;
+}
+
+#profile-text {
+    display: flex;
+    line-height: 1.6;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.github-notion-container {
+    width: 400px;
+    text-align: center;
+}
+.github-notion-container img {
+    width: 40px;
+    height: 40px;
+}
+#skills img {
+    height: 100px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+
+/* projects.pug */
+.projects {
+    margin:0 auto; 
+    width: 1200px;
+    animation-duration: 1s;
+}
+
+.projects h1 {
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+}
+
+.projects h1:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 2px solid red;
+    margin: auto;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+/* .projects .slider-container {
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+} */
+.projects img {
+    margin: 0;
+    margin-right: 30px;
+    height: 250px;
+    float: left;
+    border-radius: 30px;
+}
+
+.projects h1 span {
+    white-space: nowrap;
+}
+.projects .flex-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.projects .input-flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 50px;
+    max-width: 1000px;
+    position: relative;
+    z-index: 0;
+}
+
+.projects .input {
+    width: 25px;
+    height: 25px;
+    background-color: #f06543;
+    position: relative;
+    border-radius: 50%;
+}
+.projects .input:hover {
+    cursor: pointer;
+}
+.projects .input::before, .input::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f06543;
+    width: 130px;
+    height: 5px;
+}
+.projects .input::before {
+    left: calc(-130px + 12.5px);
+}
+.projects .input::after {
+    right: calc(-130px + 12.5px);
+}
+.projects .input.active {
+    background-color: #f06543;
+}
+.projects .input.active::before {
+    background-color: #f06543;
+}
+.projects .input.active::after {
+    background-color: #AEB6BF;
+}
+.projects .input.active span {
+    font-weight: bold;
+}
+.projects .input.active span::before {
+    font-size: 20px;
+}
+.projects .input.active span::after {
+    font-size: 20px;
+}
+.projects .input.active ~ .input, .input.active ~ .input::before, .input.active ~ .input::after {
+    background-color: #AEB6BF;
+}
+.projects .input span {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+.projects .input span::before, .input span::after {
+    visibility: visible;
+    position: absolute;
+    left: 50%;
+}
+.projects .input span::after {
+    content: attr(data-year);
+    top: 30px;
+    transform: translateX(-50%);
+    font-size: 14px;
+}
+.projects .input span::before {
+    content: attr(data-info);
+    top: -120px;
+    width: 200px;
+    transform: translateX(-5px) rotateZ(-45deg);
+    font-size: 15px;
+    text-indent: -10px;
+}
+.projects .description-flex-container {
+    width: 1000px;
+    height: 500px;
+    font-weight: 400;
+    font-size: 25px;
+    margin-top: 50px;
+}
+.projects .description-flex-container p {
+    margin-top: 0;
+    display: none;
+}
+.projects .description-flex-container p.active {
+    display: block;
+}
+
+.projects a {
+    font-size: 20px;
+    text-decoration: none;
+    margin: 15px;
+    color: crimson;
+}
+
+/* aboutpage.pug */
+.aboutpage {
+    width: 100vw;
+}
+
+.aboutpage img {
+    width: 40px;
+    height: 40px;
+}
+
+.aboutpage #aboutpage-description {
+    padding: 0px;
+    margin: 0 auto;
+    width: 1200px;
+    height: 500px;
+}
+
+.aboutpage #aboutpage-description #text {
+    margin: 0 auto;
+    font-size: 20px;
+    width: 800px;
+}
+
+.aboutpage #aboutpage-description #text a {
+    font-size: 20px;
+    text-decoration: none;
+    margin: 15px;
+    color: crimson;
+}
+
+.aboutpage h1 {
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+}
+
+.aboutpage h1:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 2px solid red;
+    margin: auto;
+    margin-left: 30px;
+    margin-right: 50px;
+}
